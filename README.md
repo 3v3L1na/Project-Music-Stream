@@ -14,22 +14,6 @@ MusicStream Trends examines **Spotify** and **Last.fm** data between **2018‑2
 
 The pipeline ⇒ **API ⇢ MySQL ⇢ Python ⇢ SQL + Visuals**.
 
----
-
-## 🗺️ Table of Contents
-
----
-
-## ⚙️ Architecture
-
-```mermaid
-graph TD
-    A[Spotify API] -->|JSON| B((Extraction scripts))
-    C[Last.fm API] --> B
-    B --> D[(MySQL DB)]
-    D --> E[Python Analysis Notebooks]
-    E --> F[Visual Dashboards (Excel/Genially)]
-```
 
 ---
 
