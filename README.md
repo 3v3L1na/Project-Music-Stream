@@ -1,2 +1,117 @@
-# Project-Music-Stream
-Analysis of the song popularity on Spotify and LastFm between 2018-2022. Group project. 
+# 🎵 MusicStream Trends (2018‑2022)
+
+> *Uncovering how global events reshaped our listening habits.*
+
+---
+
+## 📌 Project Overview
+
+MusicStream Trends examines **Spotify** and **Last.fm** data between **2018‑2022** to answer questions like:
+
+* How did the pandemic influence listening behaviour 📈?
+* Which genres surged or faded 🎸🎹?
+* What artists or tracks defined each year 👑?
+
+The pipeline ⇒ **API ⇢ MySQL ⇢ Python ⇢ SQL + Visuals**.
+
+---
+
+## 🗺️ Table of Contents
+
+1. [Architecture](#-architecture)
+2. [Quick Start](#-quick-start)
+3. [Project Structure](#-project-structure)
+4. [Key Queries & Insights](#-key-queries--insights)
+5. [Tech Stack](#-tech-stack)
+6. [Team](#-team)
+
+---
+
+## ⚙️ Architecture
+
+```mermaid
+graph TD
+    A[Spotify API] -->|JSON| B((Extraction scripts))
+    C[Last.fm API] --> B
+    B --> D[(MySQL DB)]
+    D --> E[Python Analysis Notebooks]
+    E --> F[Visual Dashboards (Excel/Genially)]
+```
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1 . Install deps
+pip install -r requirements.txt
+
+# 2 . Extract data
+python data_extraction.py
+
+# 3 . Create schema & load tables
+python database_setup.py
+python data_loading.py
+
+# 4 . Run sample query
+mysql -u <user> -p < db.sql
+```
+
+---
+
+## 📂 Project Structure
+
+```
+│  README.md
+│  requirements.txt
+├─data_extraction.py      # Spotify & Last.fm pullers
+├─database_setup.py       # DDL (tables, indexes)
+├─data_loading.py         # ETL into MySQL
+├─notebooks/              # Exploratory & SQL notebooks
+└─assets/                 # Slides, images, Genially links
+```
+
+---
+
+## 🔑 Key Queries & Insights
+
+```sql
+-- Popular tracks during lockdown months (Mar‑Jun 2020)
+SELECT title, artist, popularity
+FROM   songs
+WHERE  year = 2020 AND month BETWEEN 3 AND 6
+ORDER BY popularity DESC
+LIMIT 20;
+```
+
+* **Finding:** Lo‑fi & Bedroom‑pop saw a 25 % spike during lockdown.
+
+> 🔎 Explore more queries in `notebooks/01_analysis.ipynb`.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer      | Tools                                               |
+| ---------- | --------------------------------------------------- |
+| Extraction | `Python requests`, **Spotify API**, **Last.fm API** |
+| Storage    | **MySQL Workbench 8**                               |
+| Analysis   | `pandas`, `mysql‑connector‑python`                  |
+| Visuals    | **Excel**, **Genially**                             |
+
+---
+
+## 👩‍💻 Team — **Insight Lab**
+
+* **Evelina Saponjic**
+* **Mai García**
+* **Carla Vera**
+* **Lorena Nuñez**
+* **Susana García**
+* **Elena Peña**
+
+> Built with ☕, 🎧 & a lot of SQL love.
+
+---
+
+<p align="center"><em>Questions or suggestions? Open an issue or reach us via a pull request 🙌.</em></p>
