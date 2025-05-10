@@ -84,10 +84,6 @@ ORDER BY popularity DESC
 LIMIT 20;
 ```
 
-* **Finding:** Lo‑fi & Bedroom‑pop saw a 25 % spike during lockdown.
-
-> 🔎 Explore more queries in `notebooks/01_analysis.ipynb`.
-
 ---
 
 ## 🛠️ Tech Stack
