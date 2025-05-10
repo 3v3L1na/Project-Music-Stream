@@ -18,13 +18,6 @@ The pipeline ⇒ **API ⇢ MySQL ⇢ Python ⇢ SQL + Visuals**.
 
 ## 🗺️ Table of Contents
 
-1. [Architecture](#-architecture)
-2. [Quick Start](#-quick-start)
-3. [Project Structure](#-project-structure)
-4. [Key Queries & Insights](#-key-queries--insights)
-5. [Tech Stack](#-tech-stack)
-6. [Team](#-team)
-
 ---
 
 ## ⚙️ Architecture
